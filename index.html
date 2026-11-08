@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#29283d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pokémon Love">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="touch-icon.png">
+  <title>Pokémon Love</title>
+  <link rel="stylesheet" href="mobile.css">
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+</head>
+<body>
+  <main id="handheld" aria-label="Pokémon Love game">
+    <header><span>POKÉMON LOVE</span><button id="fullscreen" type="button" hidden>FULL SCREEN</button></header>
+    <section id="console">
+      <nav id="directions" aria-label="Movement controls">
+        <div class="dpad">
+          <button class="up direction" data-key="up" aria-label="Move up"><span aria-hidden="true">▲</span></button>
+          <button class="left direction" data-key="left" aria-label="Move left"><span aria-hidden="true">◀</span></button>
+          <span class="dpad-center" aria-hidden="true"></span>
+          <button class="right direction" data-key="right" aria-label="Move right"><span aria-hidden="true">▶</span></button>
+          <button class="down direction" data-key="down" aria-label="Move down"><span aria-hidden="true">▼</span></button>
+        </div>
+      </nav>
+      <div id="screen-slot">
+        <canvas id="canvas" width="960" height="640" tabindex="0" aria-label="Pokémon Love game screen">Your browser needs canvas support to play.</canvas>
+        <div id="loading" role="status" aria-live="polite">
+          <strong>POKÉMON LOVE</strong>
+          <span id="loading-text">Loading your adventure…</span>
+          <progress id="progress" max="100"></progress>
+          <button id="retry" type="button" hidden>TRY AGAIN</button>
+        </div>
+      </div>
+      <nav id="actions" aria-label="Game controls">
+        <div class="action-pair">
+          <button class="action back" data-key="back" aria-label="B: back or cancel">B</button>
+          <button class="action confirm" data-key="confirm" aria-label="A: confirm or interact">A</button>
+        </div>
+        <div class="shortcuts">
+          <button class="small run" data-key="run" aria-label="Hold to run">RUN</button>
+          <button class="small map" data-key="map">MAP</button>
+          <button class="small bag" data-key="bag">BAG</button>
+          <button class="small menu" data-key="menu">MENU</button>
+        </div>
+      </nav>
+    </section>
+    <footer><span id="help">A: confirm · B: back · Hold RUN + a direction to run</span><span>Save from MENU. Continue in the same browser.</span></footer>
+  </main>
+  <section id="rotate" aria-label="Rotate your phone" role="status">
+    <div class="rotate-phone" aria-hidden="true"></div>
+    <strong>TURN YOUR PHONE SIDEWAYS</strong>
+    <span>Pokémon Love plays in landscape.</span>
+  </section>
+  <noscript>Enable JavaScript to play Pokémon Love.</noscript>
+  <script src="mobile-controls.js"></script>
+  <script src="index.js"></script>
+  <script>
+  (() => {
+    'use strict';
+    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":65949724,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};
+    const canvas = document.getElementById('canvas');
+    const overlay = document.getElementById('loading');
+    const text = document.getElementById('loading-text');
+    const progress = document.getElementById('progress');
+    const retry = document.getElementById('retry');
+    const controls = window.PokemonLoveControls.create({window, document, canvas});
+    window.pokemonLoveControls = controls;
+    controls.setReady(false);
+    retry.addEventListener('click', () => window.location.reload());
+    function fail(error) {
+      console.error(error);
+      controls.setReady(false);
+      overlay.hidden = false;
+      text.textContent = 'The game could not start. Please try again in an updated Safari or Chrome browser.';
+      progress.hidden = true;
+      retry.hidden = false;
+    }
+    const missing = Engine.getMissingFeatures({threads: false});
+    if (missing.length) {
+      fail(new Error(missing.join(', ')));
+      return;
+    }
+    const engine = new Engine(config);
+    window.pokemonLoveEngine = engine;
+    engine.startGame({
+      canvas,
+      canvasResizePolicy: 0,
+      focusCanvas: false,
+      onProgress(current, total) {
+        if (current > 0 && total > 0) {
+          progress.value = current * 100 / total;
+          text.textContent = 'Loading your adventure… ' + Math.floor(current * 100 / total) + '%';
+        }
+      },
+      onExit() { controls.setReady(false); }
+    }).then(() => {
+      overlay.hidden = true;
+      controls.setReady(true);
+      canvas.focus({preventScroll: true});
+      controls.fitScreen();
+    }).catch(fail);
+  })();
+  </script>
+</body>
+</html>
+

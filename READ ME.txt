@@ -1,0 +1,36 @@
+POKEMON LOVE - MOBILE BROWSER PLAYTEST
+Version 0.2.1 / 7 November 2026
+
+PLAYING
+This is the web version, designed for iPhone Safari and Android Chrome.
+Open its hosted web address. Turn your phone sideways to play in landscape.
+Compact transparent controls float over the game image. Portrait displays
+a rotate-phone prompt. No app installation or Mac is needed.
+
+TOUCH CONTROLS
+D-pad: move (left side of game picture)
+Hold RUN and a direction together: run
+A: confirm, talk, reveal the rest of a dialogue page, then advance
+B: back/cancel; skip the opening story
+MAP: Field Guide
+BAG: backpack
+MENU: pause, party, settings and saving
+
+SAVING
+Open MENU and choose SAVE or SAVE & TITLE.
+Return using the same browser and web address, then choose CONTINUE.
+Saves stay in that browser on that device; they do not sync between phones.
+Private browsing and clearing website data can remove saved progress.
+
+HOSTING THESE FILES
+Upload this folder's contents to an HTTPS static web host.
+Keep index.html, index.js, index.wasm, index.pck, both audio worklet files,
+the mobile control files, font, manifest and images together with their names.
+The starting page is index.html.
+The host must serve .wasm as application/wasm.
+This build does not require special cross-origin isolation headers.
+Opening index.html directly as a local file or viewing it in Google Drive
+does not launch the game. It needs a web server.
+
+This first browser playtest still needs hands-on testing on real iPhone
+and Android hardware, especially audio, performance and long-term saving.
