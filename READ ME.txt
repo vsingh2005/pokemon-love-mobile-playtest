@@ -1,10 +1,10 @@
 POKEMON LOVE - MOBILE BROWSER PLAYTEST
-Version 0.2.2 / 7 November 2026
+Version 0.2.3 / 7 November 2026
 
 PLAYING
 This is the web version, designed for iPhone Safari and Android Chrome.
 Open its hosted web address. Turn your phone sideways to play in landscape.
-Compact transparent controls float over the game image. Portrait displays
+Large translucent circular controls sit at the screen edges. Portrait displays
 a rotate-phone prompt. No app installation or Mac is needed.
 
 TOUCH CONTROLS
@@ -15,6 +15,8 @@ B: back/cancel; skip the opening story
 MAP: Field Guide
 BAG: backpack
 MENU: pause, party, settings and saving
+Tap pause-menu rows directly to select them.
+Run/Map/Bag/Menu sit together in the upper-right corner.
 
 SAVING
 Open MENU and choose SAVE or SAVE & TITLE.

@@ -1,9 +1,15 @@
 {
-  "version": "0.2.2-mobile-web.20261107",
+  "version": "0.2.3-mobile-web.20261107",
   "anniversary": "August 8th",
   "opening_story_cards": 3,
   "ending_cards_before_pagination": 13,
   "ending_pages": 15,
-  "pack_sha256": "9f6164573820555e29c8b765cbf99a24e481dbafbc3e4fe95396625a6a15ba90",
-  "hosted_pack": "index-0.2.2.pck"
+  "pack_sha256": "e8d2b1c8d3421cc88f349b515c7aa595eb42b89a81a91615d0c51ded50b32746",
+  "controls": "large circular thumb controls",
+  "minimum_direction_px": 48,
+  "minimum_action_px": 64,
+  "direct_menu_taps": true,
+  "hosted_pack": "index-0.2.3.pck",
+  "hosted_css": "mobile-0.2.3.css",
+  "hosted_controls": "mobile-controls-0.2.3.js"
 }
