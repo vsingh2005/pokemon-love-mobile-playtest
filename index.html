@@ -64,7 +64,9 @@
   <script>
   (() => {
     'use strict';
-    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":65949724,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};
+    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":65952452,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};
+    config.mainPack = 'index-0.2.2.pck';
+    config.fileSizes[config.mainPack] = config.fileSizes['index.pck'];
     const canvas = document.getElementById('canvas');
     const overlay = document.getElementById('loading');
     const text = document.getElementById('loading-text');
