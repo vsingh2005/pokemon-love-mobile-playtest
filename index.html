@@ -11,7 +11,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="touch-icon.png">
   <title>Pokémon Love</title>
-  <link rel="stylesheet" href="mobile-0.2.3.css">
+  <link rel="stylesheet" href="mobile-0.2.4.css">
   <link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 
@@ -32,7 +32,10 @@
       <div id="screen-slot">
         <canvas id="canvas" width="960" height="640" tabindex="0" aria-label="Pokémon Love game screen">Your browser needs canvas support to play.</canvas>
         <div id="loading" role="status" aria-live="polite">
-          <strong>POKÉMON LOVE</strong>
+          <div class="loading-logo" role="img" aria-label="Pokémon Love">
+            <img class="loading-pokemon" src="loading-pokemon-v1.png" width="166" height="53" alt="" fetchpriority="high">
+            <img class="loading-love" src="loading-love-v1.png" width="100" height="50" alt="" fetchpriority="high">
+          </div>
           <span id="loading-text">Loading your adventure…</span>
           <progress id="progress" max="100"></progress>
           <button id="retry" type="button" hidden>TRY AGAIN</button>

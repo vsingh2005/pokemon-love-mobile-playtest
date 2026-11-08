@@ -1,5 +1,5 @@
 {
-  "version": "0.2.3-mobile-web.20261107",
+  "version": "0.2.4-mobile-web.20261107",
   "anniversary": "August 8th",
   "opening_story_cards": 3,
   "ending_cards_before_pagination": 13,
@@ -10,6 +10,8 @@
   "minimum_action_px": 64,
   "direct_menu_taps": true,
   "hosted_pack": "index-0.2.3.pck",
-  "hosted_css": "mobile-0.2.3.css",
-  "hosted_controls": "mobile-controls-0.2.3.js"
+  "hosted_css": "mobile-0.2.4.css",
+  "hosted_controls": "mobile-controls-0.2.3.js",
+  "loading_logo": "original Pokemon wordmark and eight-color Love title art",
+  "game_pack_changed": false
 }

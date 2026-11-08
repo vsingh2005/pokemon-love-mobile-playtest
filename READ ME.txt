@@ -1,5 +1,5 @@
 POKEMON LOVE - MOBILE BROWSER PLAYTEST
-Version 0.2.3 / 7 November 2026
+Version 0.2.4 / 7 November 2026
 
 PLAYING
 This is the web version, designed for iPhone Safari and Android Chrome.
